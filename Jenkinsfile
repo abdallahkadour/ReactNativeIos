@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'macos' }
+    agent { label 'mac-build-agent' }
 
     environment {
         NODE_ENV = 'production'
