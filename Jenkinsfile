@@ -39,6 +39,7 @@ pipeline {
             steps {
                 dir('ios') {
                     sh '''
+                    export PATH=/usr/local/bin:$PATH
                         pod install --repo-update
                     '''
                 }
