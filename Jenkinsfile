@@ -30,7 +30,6 @@ pipeline {
                     # Check Node version
                     node -v
                     npm install
-                    npm run build
                 '''
             
             }
