@@ -49,6 +49,7 @@ pipeline {
         stage('Bundle React Native JS') {
             steps {
                 sh '''
+                export PATH=/usr/local/bin:$PATH
                     npx react-native bundle \
                       --platform ios \
                       --dev false \
@@ -63,6 +64,7 @@ pipeline {
             steps {
                 dir('ios') {
                     sh '''
+                    export PATH=/usr/local/bin:$PATH
                         xcodebuild clean build \
                           -workspace ReactNativeIos.xcworkspace \
                           -scheme ReactNativeIos \
