@@ -22,11 +22,17 @@ pipeline {
 
         stage('Install Node Dependencies') {
             steps {
+                 
                 sh '''
+                    # Ensure Node is in PATH
+                    export PATH=/usr/local/bin:$PATH
+
+                    # Check Node version
                     node -v
-                    npm -v
-                    npm ci
+                    npm install
+                    npm run build
                 '''
+            
             }
         }
 
